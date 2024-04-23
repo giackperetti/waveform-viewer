@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstdlib>
 
+// Function to generate Fourier series for the selected waveform
 void generateFourierSeries(std::vector<sf::Vector2f> &points, int waveformType,
                            int numPoints) {
 
@@ -23,8 +24,7 @@ void generateFourierSeries(std::vector<sf::Vector2f> &points, int waveformType,
       y += std::sin(8 * M_PI * t) > 0.0f ? 1.0f : -1.0f;
       break;
 
-    case 2: // TODO: Sawtooth(NOT REPEATING), make it so more of the wave's
-            // peaks are seen
+    case 2: // Sawtooth(NOT REPEATING)
       y += 2.0f * (t - std::floor(t + 0.5f));
       break;
 
@@ -33,19 +33,23 @@ void generateFourierSeries(std::vector<sf::Vector2f> &points, int waveformType,
       break;
     }
 
+    // Adjust scale and offset as needed
     points.emplace_back(t * 1380, (1 - y) * 200);
   }
 }
 
 int main() {
+  // Create SFML window
   sf::RenderWindow window(sf::VideoMode(1280, 720), "Fourier Series Visualizer",
                           sf::Style::Titlebar | sf::Style::Close);
   window.setFramerateLimit(60);
 
-  std::vector<sf::Vector2f> points;
+  // Variables
+  std::vector<sf::Vector2f> points; // Points to be plotted
   // 0: Sinusoid, 1: Rectangular, 2: Sawtooth, 3: Triangular
   int selectedWaveform = 0;
-  int numPoints = 18000;
+  int numPoints = 18000; // Increase the number of points for a larger portion
+                         // of the waveform
 
   while (window.isOpen()) {
     sf::Event event;
