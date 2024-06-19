@@ -23,9 +23,8 @@ void generateFourierSeries(std::vector<sf::Vector2f> &points, int waveformType,
       y += std::sin(8 * M_PI * t) > 0.0f ? 1.0f : -1.0f;
       break;
 
-    case 2: // TODO: Sawtooth(NOT REPEATING), make it so more of the wave's
-            // peaks are seen
-      y += 2.0f * (t - std::floor(t + 0.5f));
+    case 2: // Sawtooth(FULLY WORKING)
+      y += 2.0f * (5.0f * t - std::floor(5.0f * t + 0.5f));
       break;
 
     case 3: // Triangular(FULLY WORKING)
