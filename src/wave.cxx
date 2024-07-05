@@ -4,9 +4,9 @@
 #include <cmath>
 #include <cstdlib>
 
-void generateFourierSeries(std::vector<sf::Vector2f> &points, int waveformType,
-                           int numPoints) {
+#define VECTOR std::vector<sf::Vector2f>
 
+void generateFourierSeries(VECTOR &points, int waveformType, int numPoints) {
   points.clear();
 
   for (int i = 0; i < numPoints; i++) {
@@ -41,7 +41,7 @@ int main() {
                           sf::Style::Titlebar | sf::Style::Close);
   window.setFramerateLimit(60);
 
-  std::vector<sf::Vector2f> points;
+  VECTOR points;
   // 0: Sinusoid, 1: Rectangular, 2: Sawtooth, 3: Triangular
   int selectedWaveform = 0;
   int numPoints = 18000;
@@ -94,7 +94,6 @@ int main() {
                        "Press 'Q' to quit the program");
     window.draw(menuText);
 
-    // Draw your Fourier series points here using SFML
     sf::VertexArray line(sf::LineStrip);
     for (const auto &point : points) {
       line.append(
