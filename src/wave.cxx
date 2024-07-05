@@ -80,10 +80,10 @@ int main() {
     window.clear(sf::Color{40, 40, 40});
 
     sf::Font font;
-    font.loadFromFile("./Arial.TTF");
+    font.loadFromFile("/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf");
     sf::Text menuText;
     menuText.setFont(font);
-    menuText.setCharacterSize(20);
+    menuText.setCharacterSize(18);
     menuText.setFillColor(sf::Color{235, 219, 178});
     menuText.setPosition(10, 10);
     menuText.setString("Press 1-4 to select waveform\n"
@@ -103,5 +103,6 @@ int main() {
     window.draw(line);
     window.display();
   }
+
   return 0;
 }
