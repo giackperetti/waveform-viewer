@@ -4,9 +4,9 @@
 #include <cmath>
 #include <cstdlib>
 
-#define VECTOR std::vector<sf::Vector2f>
+#define vector2f std::vector<sf::Vector2f>
 
-void generateFourierSeries(VECTOR &points, int waveformType, int numPoints) {
+void generateFourierSeries(vector2f &points, int waveformType, int numPoints) {
   points.clear();
 
   for (int i = 0; i < numPoints; i++) {
@@ -41,7 +41,7 @@ int main() {
                           sf::Style::Titlebar | sf::Style::Close);
   window.setFramerateLimit(60);
 
-  VECTOR points;
+  vector2f points;
 
   // 0: Sinusoid, 1: Rectangular, 2: Sawtooth, 3: Triangular
   int selectedWaveform = 0;
@@ -81,7 +81,7 @@ int main() {
     window.clear(sf::Color{40, 40, 40});
 
     sf::Font font;
-    font.loadFromFile("/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf");
+    font.loadFromFile("/usr/share/fonts/TTF/JetBrainsMono-Regular.ttf");
     sf::Text menuText;
     menuText.setFont(font);
     menuText.setCharacterSize(18);
