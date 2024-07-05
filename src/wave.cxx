@@ -42,6 +42,7 @@ int main() {
   window.setFramerateLimit(60);
 
   VECTOR points;
+
   // 0: Sinusoid, 1: Rectangular, 2: Sawtooth, 3: Triangular
   int selectedWaveform = 0;
   int numPoints = 18000;
