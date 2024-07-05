@@ -7,4 +7,5 @@ GUI application dedicated to visualizing various waveforms including Sinusoid, R
 ### Technologies Used
 - C++
 - SFML
+
 ---
